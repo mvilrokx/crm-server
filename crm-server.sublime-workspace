@@ -1,0 +1,725 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"protected"
+			],
+			[
+				"exe",
+				"execute_sql_query"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"ser",
+				"services"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"it",
+				"item-count"
+			],
+			[
+				"cookie",
+				"cookies"
+			],
+			[
+				"SS",
+				"SSO_TOKEN"
+			],
+			[
+				"SSO",
+				"SSO_RESPONSE"
+			],
+			[
+				"app",
+				"app-target"
+			],
+			[
+				"inti",
+				"initExplanation"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"txt",
+				"text-align"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"border-",
+				"border-style"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"exif",
+				"exif_data"
+			],
+			[
+				"len",
+				"length-1"
+			],
+			[
+				"t",
+				"thead	Tag"
+			],
+			[
+				"style",
+				"list-style"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"upgrad",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"prefe",
+				"Preferences: Settings - User"
+			],
+			[
+				"coffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"syntht",
+				"Set Syntax: HTML"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"packaup",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"synhtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sideba",
+				"View: Toggle Side Bar"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/.ruby-version",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/routes/notes.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/models/notes.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/routes/note.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/models/note.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/sinatra-app/recipes/setup.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/sinatra-app/recipes/default.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/sinatra-app/templates/default/unicorn.erb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/sinatra-app/templates/default/nginx.erb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/Cheffile",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/obi-server/recipes/default.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/obi_server.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/Gemfile",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/Vagrantfile",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/.gitignore",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/my-cookbooks/sinatra-app/attributes/default.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/config/README",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/app/models/query.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/app/models/session.rb",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/config.ru",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/.ruby-version",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/.ruby-gemset",
+		"/Users/mvilrokx/Projects/Sinatra/obi_server/.rvmrc",
+		"/Users/mvilrokx/Projects/Sinatra/bi/views/status_404.haml",
+		"/Users/mvilrokx/Projects/Sinatra/bi/mytestapp.rb",
+		"/Users/mvilrokx/Projects/Sinatra/bi/sass/screen.scss",
+		"/Users/mvilrokx/Projects/Sinatra/bi/config/compass.rb",
+		"/Users/mvilrokx/Projects/Sinatra/bi/sass/_accordion.scss",
+		"/Users/mvilrokx/Projects/Sinatra/bi/sass/bootstrap.scss",
+		"/Users/mvilrokx/.gemrc",
+		"/Users/mvilrokx/Projects/Rails/fusion_cloud/Vagrantfile",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/models/sales_party.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/models/opportunity.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/myapp.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/lib/queryable.rb",
+		"/Users/mvilrokx/Projects/Sinatra/voice_poc/app/models/interaction.rb",
+		"/Users/mvilrokx/Projects/Sinatra/fusion-rest-server/.rvmrc",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/stylesheets.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/head.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/css/application.css",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/javascripts.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/layout.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/index.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/iris-sinatra.rb",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/header.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/footer.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/chromeframe.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris/views/index.html.haml",
+		"/Users/mvilrokx/Projects/Sinatra/iris-sinatra.rb",
+		"/Users/mvilrokx/Dropbox/sso_ruby.rb",
+		"/Users/mvilrokx/Dropbox/clear_guest.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/models/picture.rb",
+		"/Users/mvilrokx/Dropbox/Public/Websites/wheel-list/wheel/wheel.coffee",
+		"/Users/mvilrokx/Dropbox/Public/Websites/wheel-list/wheel/wheel.js",
+		"/Users/mvilrokx/Dropbox/Public/Websites/wheel-list/wheel.css",
+		"/Users/mvilrokx/Dropbox/get.sh",
+		"/Users/mvilrokx/Dropbox/sso.out",
+		"/Users/mvilrokx/Dropbox/wgetlog-02-08-13-18:52.log",
+		"/Users/mvilrokx/Dropbox/Public/Websites/RightNow VA data/index.html",
+		"/Users/mvilrokx/Dropbox/Public/Websites/RightNow VA data/humans.txt",
+		"/Users/mvilrokx/Documents/drawing.svg",
+		"/Users/mvilrokx/Downloads/bookmarklet2extension/background.js",
+		"/Users/mvilrokx/Downloads/bookmarklet2extension/manifest.json",
+		"/Users/mvilrokx/Downloads/bookmarklet2extension/bookmarklet.js",
+		"/Users/mvilrokx/Dropbox/Chrome Extensions/dedyslexify/manifest.json",
+		"/Users/mvilrokx/Dropbox/Public/Websites/bookmarklets/bookmarklets.html",
+		"/Users/mvilrokx/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Users/mvilrokx/Dropbox/Public/Websites/Voice V2/ratchet/template.html",
+		"/Users/mvilrokx/Dropbox/Public/Websites/d3js/sinus.js",
+		"/Users/mvilrokx/Dropbox/Public/Websites/d3js/sinus.html",
+		"/Users/mvilrokx/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/mvilrokx/Projects/Rails/capture/lib/exif_data.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/stylesheets/home.css.scss",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/pictures/index.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/_navbar.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/home/_slideout.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/javascripts/home.js.coffee",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/pictures/_form.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/javascripts/pictures.js.coffee",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/stylesheets/pictures.css.scss",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/stylesheets/application.css.scss",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/stylesheets/images.css.scss",
+		"/Users/mvilrokx/Projects/Rails/capture/Gemfile",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/home/index.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/models/captured_object.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/captured_objects/index.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/captured_objects_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/home_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/application_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/layouts/application.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/helpers/application_helper.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/notes_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/notes/index.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/config/routes.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/notes/_form.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/notes/new.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/notes/edit.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/models/captured_objects.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/models/.gitkeep",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/javascripts/application.js",
+		"/Users/mvilrokx/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/pictures_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/_footer.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/stylesheets/application/document.css.scss",
+		"/Users/mvilrokx/Projects/Rails/capture/db/migrate/20121008192930_add_exif_data_to_pictures.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/config/environments/development.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/config/application.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/db/migrate/20121005213851_add_attachment_captured_image_to_images.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/lib/exif_data/exif_data.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/lib/exif_data/math.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/lib/exif_data/gps_math.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/lib/gps_math.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/config/initializers/paperclip.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/.gitignore",
+		"/Users/mvilrokx/Projects/Rails/capture/capture.sublime-project",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/pictures/edit.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/pictures/new.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/javascripts/images.js",
+		"/Users/mvilrokx/Projects/Rails/capture/app/assets/javascripts/images.js.coffee",
+		"/Users/mvilrokx/Projects/Rails/capture/db/migrate/20121005212836_create_images.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/_flashes.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/flashes.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/models/image.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/images/index.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/images/new.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/controllers/images_controller.rb",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/_header.html.haml",
+		"/Users/mvilrokx/Projects/Rails/capture/app/views/application/_head.html.haml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"session",
+			"         ",
+			"rails-lastmile",
+			"rails",
+			"\"\n",
+			"forwa",
+			"host",
+			"logon",
+			"require",
+			"ap ",
+			"Username",
+			"username",
+			"password",
+			"mixins",
+			"65001",
+			"\"",
+			"base",
+			"http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/types/",
+			"web",
+			" \n",
+			"padding",
+			"wheel",
+			" $",
+			"$angle-px",
+			"height",
+			"4",
+			"angles",
+			"60px",
+			"width",
+			"mixins",
+			"auth",
+			"] = ",
+			"request[",
+			"['",
+			"y3V3N24mAfX1em",
+			"JSESSIONID=",
+			"y3V3N24mAfX1em",
+			"\"\n",
+			"3876426381",
+			"%40",
+			"%22",
+			"%20",
+			"Release",
+			"release",
+			"Testing",
+			"t∂çesting",
+			"Testing",
+			"testing",
+			") ",
+			"dialogNe",
+			"explanationFirst",
+			"start",
+			"oracle-voice",
+			"this",
+			"startApp",
+			"oracle-voice",
+			"></",
+			"active",
+			"apps",
+			"20px",
+			"50% 0%, circle, black 50%, white",
+			"grad",
+			"spring",
+			"style",
+			")\n",
+			"side-tab",
+			"striped",
+			"white",
+			"//@",
+			"pictures_path",
+			"picture",
+			"image",
+			"picture",
+			"Picture",
+			"picture",
+			"Picture",
+			"picture",
+			"Picture",
+			"picture",
+			"Picture",
+			"picture",
+			"Picture",
+			"picture",
+			"edit_picture_path",
+			"whites",
+			"paperclip",
+			"auto",
+			"amp",
+			"extract_exif",
+			"mini_exiftool",
+			"bloodpressure_readings",
+			"bp_readings",
+			"bloodpressure_readings",
+			"current_user",
+			"destroy",
+			"destroy\n    redirect_to bloodp",
+			"destroy",
+			"bp_reading",
+			"image",
+			"Image",
+			"image",
+			"Image",
+			"image",
+			"Image",
+			"image",
+			"options",
+			"<%",
+			"%>",
+			"10",
+			"150px",
+			"span1",
+			"offset3",
+			"-fluid",
+			"coffee",
+			"github",
+			"fon",
+			"font",
+			"title",
+			"font",
+			"include",
+			"font",
+			"include",
+			"firstAccountId",
+			"period",
+			"console",
+			"[massagedResults.length]",
+			"weight"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"SELECT\n   0 s_0,\n   \"Workforce Management - Worker Assignment Real Time\".\"Business Unit\".\"Business Unit Name\" s_1,\n   \"Workforce Management - Worker Assignment Real Time\".\"Department\".\"Department Name\" s_2,\n   \"Workforce Management - Worker Assignment Real Time\".\"Department\".\"Supervisor Full Name\" s_3,\n   \"Workforce Management - Worker Assignment Real Time\".\"Worker Assignment\".\"Head Count\" s_4,\n   REPORT_SUM(\"Workforce Management - Worker Assignment Real Time\".\"Worker Assignment\".\"Head Count\" BY \"Workforce Management - Worker Assignment Real Time\".\"Business Unit\".\"Business Unit Name\") s_5\nFROM \"Workforce Management - Worker Assignment Real Time\"\nUNION ALL\nSELECT\n   1 s_0,\n   \"Workforce Management - Worker Assignment Real Time\".\"Business Unit\".\"Business Unit Name\" s_1,\n   \"Workforce Management - Worker Assignment Real Time\".\"Department\".\"Department Name\" s_2,\n   \"Workforce Management - Worker Assignment Real Time\".\"Department\".\"Supervisor Full Name\" s_3,\n   CAST(NULL AS DOUBLE) s_4,\n   CAST(NULL AS DOUBLE) s_5\nFROM \"Workforce Management - Worker Assignment Real Time\"\n) djm ORDER BY 1, 2 ASC NULLS LAST\nFETCH FIRST 65001 ROWS ONLY",
+			"@",
+			"'",
+			" ",
+			"[mrLength]"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"exif",
+				"lib/exif_data.rb"
+			],
+			[
+				"form",
+				"app/views/pictures/_form.html.haml"
+			],
+			[
+				"applcs",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"imacs",
+				"app/assets/stylesheets/images.css.scss"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"home",
+				"app/assets/stylesheets/home.css.scss"
+			],
+			[
+				"coffee",
+				"app/assets/javascripts/home.js.coffee"
+			],
+			[
+				"appli",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"appple",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"appl",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"inde",
+				"app/views/home/index.html.haml"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"homein",
+				"app/views/home/index.html.haml"
+			],
+			[
+				"_for",
+				"app/views/pictures/_form.html.haml"
+			],
+			[
+				"cofee",
+				"app/assets/javascripts/pictures.js.coffee"
+			],
+			[
+				"dev",
+				"config/environments/development.rb"
+			],
+			[
+				"2012",
+				"db/migrate/20121008192930_add_exif_data_to_pictures.rb"
+			],
+			[
+				"202",
+				"db/migrate/20121005213851_add_attachment_captured_image_to_images.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"applica",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"piccoff",
+				"app/assets/javascripts/pictures.js.coffee"
+			],
+			[
+				"picco",
+				"app/controllers/pictures_controller.rb"
+			],
+			[
+				"paper",
+				"config/initializers/paperclip.rb"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"pict",
+				"app/models/picture.rb"
+			],
+			[
+				"contr",
+				"app/controllers/pictures_controller.rb"
+			],
+			[
+				"picture",
+				"app/models/picture.rb"
+			],
+			[
+				"",
+				"capture.sublime-project"
+			],
+			[
+				"contre",
+				"app/controllers/pictures_controller.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20121005213851_add_attachment_captured_image_to_images.rb"
+			],
+			[
+				"devel",
+				"config/environments/development.rb"
+			],
+			[
+				"model",
+				"app/models/image.rb"
+			],
+			[
+				"add",
+				"db/migrate/20121005213851_add_attachment_captured_image_to_images.rb"
+			],
+			[
+				"createima",
+				"db/migrate/20121005212836_create_images.rb"
+			],
+			[
+				"applcss",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"projec",
+				"capture.sublime-project"
+			],
+			[
+				"prod",
+				"config/environments/production.rb"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"haml",
+				"app/views/awards/index.html.haml"
+			],
+			[
+				"styles",
+				"app/assets/stylesheets/partials/home/_signup_banner.scss"
+			],
+			[
+				"test",
+				"test.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true
+}
