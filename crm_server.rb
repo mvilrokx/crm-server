@@ -35,6 +35,16 @@ class CrmServer < Sinatra::Base
 		content_type :json
 	end
 
+	get '/' do
+		"App is UP!"
+	end
+
+	post '/logon' do
+		session[:ws_host] = params[:ws_host]
+		session[:user] = params[:user]
+		session[:pwd] = params[:pwd]
+	end
+
 	get '/interactions' do
 		response = Interaction.find_interaction(params, session)
 		response.body[("find_interaction_response").to_sym][:result].to_json

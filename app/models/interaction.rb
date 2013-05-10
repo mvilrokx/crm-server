@@ -7,7 +7,7 @@ class Interaction
   extend Savon::Model
   include Queryable
 
-  @@max_fetch_size = 1
+  @max_fetch_size = 1
 
   operations :find_interaction
   client       wsdl: "https://fap0581-crm.oracleads.com/appCmmnCompInteractions/InteractionService?wsdl",
@@ -19,7 +19,7 @@ class Interaction
     "xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"
   }
 
-  def find_interaction(params, session)
+  def self.find_interaction(params, session)
     super(message: find_criteria)
   rescue Savon::SOAPFault => error
     error.to_hash[:fault]
