@@ -5,21 +5,20 @@ module Queryable
   end
 
   module ClassMethods
-
-    attr_accessor :max_fetch_size
-
-    def find_criteria
-      {
-        "types:findCriteria" => [self.fetching]
-      }
-    end
-
-    def fetching(fetchStart = 0, fetchSize = max_fetch_size)
-      {
-        "typ1:fetchStart" => fetchStart,
-        "typ1:fetchSize"  => fetchSize
-      }
-    end
+    #put class methods here
   end
+
   #put instance methods here
+  def find_criteria(ns = "types")
+    {
+      "#{ns}:findCriteria" => [fetching]
+    }
+  end
+
+  def fetching(ns = "typ1", fetchStart = 0, fetchSize = @max_fetch_size)
+    {
+      "#{ns}:fetchStart" => fetchStart,
+      "#{ns}:fetchSize"  => fetchSize
+    }
+  end
 end

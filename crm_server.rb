@@ -26,9 +26,7 @@ class CrmServer < Sinatra::Base
 	configure do
 		enable :sessions
 		set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
-	  set :ws_host, 'https://fap0581-crm.oracleads.com'
-	  set :user => 'lisa.jones', :pwd => 'Ngt49384' # 'BGG58595'
-	  set :views, settings.root + '/app/views'
+	  set :namespaces, {"xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"}
 	end
 
 	before do
@@ -39,6 +37,14 @@ class CrmServer < Sinatra::Base
 		"App is UP!"
 	end
 
+	# ONLY FOR TESTING, PLEASE USE POST IN PROD!!!!!
+	get '/logon' do
+		session[:ws_host] = params[:ws_host]
+		session[:user] = params[:user]
+		session[:pwd] = params[:pwd]
+		"successfully logged on"
+	end
+
 	post '/logon' do
 		session[:ws_host] = params[:ws_host]
 		session[:user] = params[:user]
@@ -46,7 +52,8 @@ class CrmServer < Sinatra::Base
 	end
 
 	get '/interactions' do
-		response = Interaction.find_interaction(params, session)
+		interaction = Interaction.new(settings, session)
+		response = interaction.find_interaction(params, session)
 		response.body[("find_interaction_response").to_sym][:result].to_json
 
 		# "hello world"
