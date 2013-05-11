@@ -8,6 +8,8 @@ require 'app/models/interaction'
 
 class CrmServer < Sinatra::Base
 
+	use Rack::Session::Cookie, :key => 'rack.session',
+	                           :path => '/'
 
   MAJOR_VERSION = 0
   MINOR_VERSION = 1
@@ -24,7 +26,7 @@ class CrmServer < Sinatra::Base
   # end
 
 	configure do
-		enable :sessions
+		# enable :sessions
 		set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
 	  set :namespaces, {"xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"}
 	end
@@ -55,8 +57,6 @@ class CrmServer < Sinatra::Base
 		interaction = Interaction.new(settings, session)
 		response = interaction.find_interaction(params, session)
 		response.body[("find_interaction_response").to_sym][:result].to_json
-
-		# "hello world"
 	end
 
   helpers do
