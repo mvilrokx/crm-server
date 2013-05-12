@@ -60,10 +60,22 @@ class CrmServer < Sinatra::Base
 		response.body[("find_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
 	end
 
+	post '/:lbo' do
+		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
+		response = lbo.add(params, session)
+		response.body[("create_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
+	end
+
 	get '/:lbo/:id' do
 		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
 		response = lbo.get(params, session)
 		response.body[("get_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
+	end
+
+	delete '/:lbo/:id' do
+		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
+		response = lbo.remove(params, session)
+		response.body.to_json
 	end
 
   helpers do
