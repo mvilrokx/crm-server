@@ -25,6 +25,8 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 2.1.0)
       wasabi (~> 3.1.0)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -44,5 +46,6 @@ PLATFORMS
 DEPENDENCIES
   json
   savon
+  shotgun
   sinatra
   thin

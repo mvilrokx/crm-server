@@ -9,7 +9,8 @@ require 'app/models/interaction'
 class CrmServer < Sinatra::Base
 
 	use Rack::Session::Cookie, :key => 'rack.session',
-	                           :path => '/'
+	                           :path => '/',
+	                           :secret => 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
 
   MAJOR_VERSION = 0
   MINOR_VERSION = 1
@@ -27,7 +28,7 @@ class CrmServer < Sinatra::Base
 
 	configure do
 		# enable :sessions
-		set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
+		# set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
 	  set :namespaces, {"xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"}
 	end
 
@@ -53,10 +54,16 @@ class CrmServer < Sinatra::Base
 		session[:pwd] = params[:pwd]
 	end
 
-	get '/interactions' do
-		interaction = Interaction.new(settings, session)
-		response = interaction.find_interaction(params, session)
-		response.body[("find_interaction_response").to_sym][:result].to_json
+	get '/:lbo' do
+		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
+		response = lbo.find(params, session)
+		response.body[("find_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
+	end
+
+	get '/:lbo/:id' do
+		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
+		response = lbo.get(params, session)
+		response.body[("get_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
 	end
 
   helpers do

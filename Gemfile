@@ -3,3 +3,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'savon'
 gem 'json'
+
+group :development do
+	gem 'shotgun'
+end
