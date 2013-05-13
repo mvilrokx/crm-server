@@ -6,6 +6,8 @@ require 'find_criteria'
 class Interaction
   extend Savon::Model
 
+  # attr_accessor :max_fetch_size
+
   def initialize(settings, session)
     @max_fetch_size = 1
     # self.class.operations "find_#{self.name.underscore}".to_sym
@@ -23,7 +25,7 @@ class Interaction
   end
 
   def find_interaction(params, session)
-    super(message: FindCriteria.new("typ1", params)) #criteria)
+    super(message: FindCriteria.new("typ1", params, @max_fetch_size)) #criteria)
   rescue Savon::SOAPFault => error
     error.to_hash[:fault]
   end

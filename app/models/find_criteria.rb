@@ -1,15 +1,19 @@
-class FindCriteria
+require_relative '../../lib/pageable'
 
-	def initialize(ns = "typ1", params = {})
+class FindCriteria
+  include Pageable
+
+	def initialize(ns = "typ1", params = {}, max_fetch_size)
 		@ns = ns
 		@params = params
+    @max_fetch_size = max_fetch_size
 	end
 
 	def to_s
     xml_builder = Builder::XmlMarkup.new
     xml_builder.types :findCriteria do |xml|
-      xml.tag!("#{@ns}:fetchStart", 0)
-      xml.tag!("#{@ns}:fetchSize", 10)
+      xml.tag!("#{@ns}:fetchStart", fetch_start(@params[:page], @params[:page_size]||@max_fetch_size))
+      xml.tag!("#{@ns}:fetchSize", fetch_size(@params[:page_size]||@max_fetch_size))
       filter(@params[:search], xml) if @params[:search]
       sort_order(@params[:sort], xml) if @params[:sort]
     end
