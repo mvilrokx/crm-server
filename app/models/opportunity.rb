@@ -10,7 +10,7 @@ class Opportunity
 
   def initialize(settings, session)
     @max_fetch_size = 10
-    @lbo_name = self.class.name.snakecase
+    @lbo_name = self.class.name.underscore
     self.class.operations "find_#{@lbo_name}".to_sym,
                           "get_#{@lbo_name}".to_sym,
                           "delete_#{@lbo_name}".to_sym,

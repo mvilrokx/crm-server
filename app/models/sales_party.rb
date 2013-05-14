@@ -10,10 +10,10 @@ class SalesParty
 
   def initialize(settings, session)
     @max_fetch_size = 10
-    @lbo_name = self.class.name.snakecase
+    @lbo_name = self.class.name.underscore
     self.class.operations "find_#{@lbo_name}".to_sym,
                           "get_#{@lbo_name}".to_sym,
-                          "delete_#{@lbo_name}".to_sym,
+                          # "delete_#{@lbo_name}".to_sym,
                           "create_#{@lbo_name}".to_sym
     self.class.client wsdl: "#{session[:ws_host]}/crmCommonSalesParties/SalesPartyService?wsdl",
            ssl_verify_mode: :none
@@ -24,13 +24,6 @@ class SalesParty
     })
   end
 
-  # I can't get this to work, but it should so it becomes generic
-  # define_method("find_#{@lbo_name}") do |params, session|
-  #   super(message: FindCriteria.new("typ1", params, @max_fetch_size))
-  #   alias_method :find, :find_opportunity
-  # end
-  # alias :find :find_opportunity
-
   def find_sales_party(params, session)
     super(message: FindCriteria.new("typ1", params, @max_fetch_size)) #criteria)
   rescue Savon::SOAPFault => error
@@ -39,32 +32,28 @@ class SalesParty
   alias :find :find_sales_party
 
   def get_sales_party(params, session)
-    super(message: {"types:salesPartyId" => params[:id]})
+    super(message: {"types:partyId" => params[:id]})
   rescue Savon::SOAPFault => error
     error.to_hash[:fault]
   end
   alias :get :get_sales_party
 
-  def create_opportunity(params, session)
-    super(message: {
-      "types:#{@lbo_name}" => {
-        "#{@lbo_name}:Name" => params[:name],
-        "#{@lbo_name}:Description" => params[:description]
-      }
-    })
-  rescue Savon::SOAPFault => error
-    error.to_hash[:fault]
-  end
-  alias :add :create_opportunity
+# Haven't figured out the parameters yet
+  # def create_sales_party(params, session)
+  #   super(message: {
+  #     "types:#{@lbo_name}" => {
+  #       "#{@lbo_name}:Name" => params[:name],
+  #       "#{@lbo_name}:Description" => params[:description]
+  #     }
+  #   })
+  # rescue Savon::SOAPFault => error
+  #   error.to_hash[:fault]
+  # end
+  # alias :add :create_opportunity
 
-  def delete_opportunity(params, session)
-    super(message: {
-      "types:#{@lbo_name}" => {
-        "#{@lbo_name}:OptyId" => params[:id]}
-    })
-  rescue Savon::SOAPFault => error
-    error.to_hash[:fault]
-  end
-  alias :remove :delete_opportunity
+  # Oppertion does not exist in wsdl.
+  # def delete_sales_party(params, session)
+  # end
+  # alias :remove :delete_opportunity
 
 end

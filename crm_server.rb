@@ -114,20 +114,3 @@ private
   # start the server if ruby file executed directly
   run! if __FILE__ == $0
 end
-
-# xtend string class to be able to convert class names to snakecase
-# this should probably not be in this file, but hey, its late
-class String
-  def snakecase
-    self.gsub(/::/, '/').
-    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-    gsub(/([a-z\d])([A-Z])/,'\1_\2').
-    tr("-", "_").
-    downcase
-  end
-
-  def camel_case
-    return self if self !~ /_/ && self =~ /[A-Z]+.*/
-    split('_').map{|e| e.capitalize}.join
-  end
-end
