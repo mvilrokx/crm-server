@@ -3,14 +3,14 @@ $:<<::File.dirname(__FILE__)
 require 'sinatra/base'
 require 'savon'
 require 'json'
-
-require 'app/models/interaction'
+require 'active_support/all'
+require 'app/models/init'
 
 class CrmServer < Sinatra::Base
 
-	use Rack::Session::Cookie, :key => 'rack.session',
-	                           :path => '/',
-	                           :secret => 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
+  use Rack::Session::Cookie, :key => 'rack.session',
+                             :path => '/',
+                             :secret => 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
 
   MAJOR_VERSION = 0
   MINOR_VERSION = 1
@@ -23,60 +23,60 @@ class CrmServer < Sinatra::Base
 
   # configure :production do
   #   use Throttler, :min => 300.0, :cache => Memcached.new, :key_prefix => :throttle
-  # 	disable :show_exceptions
+  #   disable :show_exceptions
   # end
 
-	configure do
-		# enable :sessions
-		# set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
-	  set :namespaces, {"xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"}
-	end
+  configure do
+    # enable :sessions
+    # set :session_secret, 'alkdjfheruirgu439ygb34#T^%U^UJergnj3tmsfnvuhr943utnsfnsdjkewq9020923ynfv;jkw'
+    set :namespaces, {"xmlns:typ1"  => "http://xmlns.oracle.com/adf/svc/types/"}
+  end
 
-	before do
-		content_type :json
-	end
+  before do
+    content_type :json
+  end
 
-	get '/' do
-		"App is UP!"
-	end
+  get '/' do
+    "App is UP!"
+  end
 
-	# ONLY FOR TESTING, PLEASE USE POST IN PROD!!!!!
-	get '/logon' do
-		session[:ws_host] = params[:ws_host]
-		session[:user] = params[:user]
-		session[:pwd] = params[:pwd]
-		"successfully logged on"
-	end
+  # ONLY FOR TESTING, PLEASE USE POST IN PROD!!!!!
+  get '/logon' do
+    session[:ws_host] = params[:ws_host]
+    session[:user] = params[:user]
+    session[:pwd] = params[:pwd]
+    "successfully logged on"
+  end
 
-	post '/logon' do
-		session[:ws_host] = params[:ws_host]
-		session[:user] = params[:user]
-		session[:pwd] = params[:pwd]
-	end
+  post '/logon' do
+    session[:ws_host] = params[:ws_host]
+    session[:user] = params[:user]
+    session[:pwd] = params[:pwd]
+  end
 
-	get '/:lbo' do
-		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
-		response = lbo.find(params, session)
-		response.body[("find_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
-	end
+  get '/:lbo' do
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    response = lbo.find(params, session)
+    response.body[("find_#{params[:lbo].singularize}_response").to_sym][:result].to_json
+  end
 
-	post '/:lbo' do
-		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
-		response = lbo.add(params, session)
-		response.body[("create_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
-	end
+  post '/:lbo' do
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    response = lbo.add(params, session)
+    response.body[("create_#{params[:lbo].singularize}_response").to_sym][:result].to_json
+  end
 
-	get '/:lbo/:id' do
-		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
-		response = lbo.get(params, session)
-		response.body[("get_#{params[:lbo].chomp("s")}_response").to_sym][:result].to_json
-	end
+  get '/:lbo/:id' do
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    response = lbo.get(params, session)
+    response.body[("get_#{params[:lbo].singularize}_response").to_sym][:result].to_json
+  end
 
-	delete '/:lbo/:id' do
-		lbo = Object.const_get(params[:lbo].chomp("s").capitalize).new(settings, session)
-		response = lbo.remove(params, session)
-		response.body.to_json
-	end
+  delete '/:lbo/:id' do
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    response = lbo.remove(params, session)
+    response.body.to_json
+  end
 
   helpers do
     def version_compatible?(nums)
@@ -94,23 +94,40 @@ class CrmServer < Sinatra::Base
 
 private
   def responder(r)
-		if r.is_a?(Savon::Response)
-			yield(r) if block_given?
-		else # something went wrong with the SOAP request
-			case r[:faultstring]
-			when 'Error occurred while processing the query.'
-				status 400
-			when 'Authentication error. An invalid User Name or Password was entered.'
-				status 401
-			when 'Invalid session ID'
-				status 401
-			else
-				status 500
-			end
-			r.to_json
-		end
+    if r.is_a?(Savon::Response)
+      yield(r) if block_given?
+    else # something went wrong with the SOAP request
+      case r[:faultstring]
+      when 'Error occurred while processing the query.'
+        status 400
+      when 'Authentication error. An invalid User Name or Password was entered.'
+        status 401
+      when 'Invalid session ID'
+        status 401
+      else
+        status 500
+      end
+      r.to_json
+    end
   end
 
-	# start the server if ruby file executed directly
+  # start the server if ruby file executed directly
   run! if __FILE__ == $0
+end
+
+# xtend string class to be able to convert class names to snakecase
+# this should probably not be in this file, but hey, its late
+class String
+  def snakecase
+    self.gsub(/::/, '/').
+    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+    gsub(/([a-z\d])([A-Z])/,'\1_\2').
+    tr("-", "_").
+    downcase
+  end
+
+  def camel_case
+    return self if self !~ /_/ && self =~ /[A-Z]+.*/
+    split('_').map{|e| e.capitalize}.join
+  end
 end

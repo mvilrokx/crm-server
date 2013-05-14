@@ -9,12 +9,12 @@ class Interaction
   # attr_accessor :max_fetch_size
 
   def initialize(settings, session)
-    @max_fetch_size = 1
-    # self.class.operations "find_#{self.name.underscore}".to_sym
-    self.class.operations "find_interaction".to_sym,
-                          "get_interaction".to_sym,
-                          "delete_interaction".to_sym,
-                          "create_interaction".to_sym
+    @max_fetch_size = 10
+    @lbo_name = self.class.name.snakecase
+    self.class.operations "find_#{@lbo_name}".to_sym,
+                          "get_#{@lbo_name}".to_sym,
+                          "delete_#{@lbo_name}".to_sym,
+                          "create_#{@lbo_name}".to_sym
     self.class.client wsdl: "#{session[:ws_host]}/appCmmnCompInteractions/InteractionService?wsdl",
            ssl_verify_mode: :none
     self.class.global :basic_auth, session[:user], session[:pwd]

@@ -20,10 +20,10 @@ class FindCriteria
 	end
 
   def filter(where, xml)
-    xml.tag! "#{@ns}:filter" do |xml1|
-      xml1.tag! "#{@ns}:group" do |xml2|
+    xml.tag! "#{@ns}:filter" do |filter_xml|
+      filter_xml.tag! "#{@ns}:group" do |group_xml|
         where.each do |a, v|
-          add_filter(a, v, xml2)
+          add_filter(a, v, group_xml)
         end if where
       end
     end
@@ -41,11 +41,11 @@ class FindCriteria
 
   def sort_order(sort, xml)
     if sort
-      xml.tag! "#{@ns}:sortOrder" do |xml1|
+      xml.tag! "#{@ns}:sortOrder" do |sort_xml|
         sort.each do |a, v|
-          xml1.tag! "#{@ns}:sortAttribute" do |x|
-            x.tag! "#{@ns}:name", a
-            x.tag! "#{@ns}:descending", v=="asc" ? false : true
+          sort_xml.tag! "#{@ns}:sortAttribute" do |attr_xml|
+            attr_xml.tag! "#{@ns}:name", a
+            attr_xml.tag! "#{@ns}:descending", v=="asc" ? false : true
           end
         end
       end
