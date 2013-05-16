@@ -8,16 +8,16 @@ class Opportunity
 
   # attr_accessor :max_fetch_size
 
-  def initialize(settings, session)
-    @max_fetch_size = 10
+  def initialize(settings, session, params)
+    @max_fetch_size = 20
     @lbo_name = self.class.name.underscore
     self.class.operations "find_#{@lbo_name}".to_sym,
                           "get_#{@lbo_name}".to_sym,
                           "delete_#{@lbo_name}".to_sym,
                           "create_#{@lbo_name}".to_sym
-    self.class.client wsdl: "#{session[:ws_host]}/opptyMgmtOpportunities/OpportunityService?wsdl",
+    self.class.client wsdl: "#{session[:ws_host]||params[:ws_host]}/opptyMgmtOpportunities/OpportunityService?wsdl",
            ssl_verify_mode: :none
-    self.class.global :basic_auth, session[:user], session[:pwd]
+    self.class.global :basic_auth, session[:user]||params[:user], session[:pwd]||params[:pwd]
     self.class.global :namespaces, settings.namespaces.merge({
       "xmlns:types" => "http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/types/",
       "xmlns:#{@lbo_name}"   => "http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/"

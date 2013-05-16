@@ -34,6 +34,9 @@ class CrmServer < Sinatra::Base
 
   before do
     content_type :json
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    # response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    # response.headers['Access-Control-Allow-Headers'] = 'X-CSRF-Token' # This is a Rails header, you may not need it
   end
 
   get '/' do
@@ -45,7 +48,7 @@ class CrmServer < Sinatra::Base
     session[:ws_host] = params[:ws_host]
     session[:user] = params[:user]
     session[:pwd] = params[:pwd]
-    "successfully logged on"
+    {:status => "ok"}.to_json
   end
 
   post '/logon' do
@@ -55,25 +58,25 @@ class CrmServer < Sinatra::Base
   end
 
   get '/:lbo' do
-    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session, params)
     response = lbo.find(params, session)
     response.body[("find_#{params[:lbo].singularize}_response").to_sym][:result].to_json
   end
 
   post '/:lbo' do
-    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session, params)
     response = lbo.add(params, session)
     response.body[("create_#{params[:lbo].singularize}_response").to_sym][:result].to_json
   end
 
   get '/:lbo/:id' do
-    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session, params)
     response = lbo.get(params, session)
     response.body[("get_#{params[:lbo].singularize}_response").to_sym][:result].to_json
   end
 
   delete '/:lbo/:id' do
-    lbo = Object.const_get(params[:lbo].classify).new(settings, session)
+    lbo = Object.const_get(params[:lbo].classify).new(settings, session, params)
     response = lbo.remove(params, session)
     response.body.to_json
   end
