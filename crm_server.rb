@@ -34,7 +34,7 @@ class CrmServer < Sinatra::Base
 
   before do
     content_type :json
-    response.headers['Access-Control-Allow-Origin'] = '*'
+    # response.headers['Access-Control-Allow-Origin'] = '*'
     # response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
     # response.headers['Access-Control-Allow-Headers'] = 'X-CSRF-Token' # This is a Rails header, you may not need it
   end
