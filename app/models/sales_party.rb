@@ -19,7 +19,7 @@ class SalesParty
            ssl_verify_mode: :none
     self.class.global :basic_auth, session[:user]||params[:user], session[:pwd]||params[:pwd]
     self.class.global :namespaces, settings.namespaces.merge({
-      "xmlns:types" => "http://xmlns.oracle.com/apps/crmCommon/salesParties/salesPartiesService/types/",
+      "xmlns:types"          => "http://xmlns.oracle.com/apps/crmCommon/salesParties/salesPartiesService/types/",
       "xmlns:#{@lbo_name}"   => "http://xmlns.oracle.com/apps/crmCommon/salesParties/salesPartiesService/"
     })
   end
